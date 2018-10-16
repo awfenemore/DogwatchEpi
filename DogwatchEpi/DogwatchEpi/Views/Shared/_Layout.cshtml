@@ -7,17 +7,20 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-<div>
-    @if (!Model.HideSiteHeader)
-    {
-        Html.RenderPartial("Header", Model);
-    }
-    @RenderBody()
-    @if (!Model.HideSiteFooter)
-    {
-        Html.RenderPartial("Footer", Model);
-    }
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div>
+        <link rel="stylesheet" type="text/css" href="~/Static/Globals.css" />
+
+        @if (!Model.HideSiteHeader)
+        {
+            Html.RenderPartial("Header", Model);
+        }
+        @RenderBody()
+        @if (!Model.HideSiteFooter)
+        {
+            Html.RenderPartial("Footer", Model);
+        }
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 </html>
