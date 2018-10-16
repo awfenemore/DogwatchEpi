@@ -1,3 +1,9 @@
 ﻿body {
-    font-family: 'BahnSchrift';             /*until 'Happy Monkey' is working*/
+    font-family: 'BahnSchrift'; /*until 'Happy Monkey' is working*/
+    padding-top: 150px;
+    border-top: 2px black;
+}
+
+a {
+    cursor: pointer;
 }
