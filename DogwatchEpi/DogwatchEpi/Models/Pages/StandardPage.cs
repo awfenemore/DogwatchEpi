@@ -6,7 +6,7 @@ using EPiServer.DataAnnotations;
 namespace DogwatchEpi.Models.Pages
 {
     [ContentType(DisplayName = "StandardPage", GUID = "2f669c4b-f678-4d59-bbd9-42fd4e88c1a1", Description = "")]
-    public class StandardPage : PageData
+    public class StandardPage : SitePageData
     {
         [CultureSpecific]
         [Display(
@@ -25,18 +25,5 @@ namespace DogwatchEpi.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 1)]
         public virtual XhtmlString MainBody { get; set; }
-
-
-        [Display(
-            GroupName = SystemTabNames.Settings,
-            Order = 200)]
-        [CultureSpecific]
-        public virtual bool HideSiteHeader { get; set; }
-
-        [Display(
-            GroupName = SystemTabNames.Settings,
-            Order = 300)]
-        [CultureSpecific]
-        public virtual bool HideSiteFooter { get; set; }
     }
 }
