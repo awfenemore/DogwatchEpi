@@ -1,52 +1,89 @@
-﻿<div class="header">    
+﻿<div class="header">
     <link rel="stylesheet" type="text/css" href="~/Static/Header.css" />
-
-    <a href="http://www.dogwatch.co.nz">
-        <!-- TODO check if this should be relative pathing -->
-        <img src="/Content/Images/dogwatch-logo_434x115.png" />
-    </a>
+    <div id="header-dogwatch-logo">
+        <a href="http://www.dogwatch.co.nz">
+            <!-- TODO check if this should be relative pathing -->
+            <img src="/Content/Images/dogwatch-logo_434x115.png" />
+        </a>
+    </div>
+  
 
     <!-- setup statically at the moment, but would like to be dynamic if I knew how to edit headers in cms -->
+    <div id="header-navigation">
+        <ul id="navbar-menu">
+            <li class="header-nav-menu-item">
+                <!-- TODO check typing for an empty a and relative routing-->
+                <a>Dog Adoptions</a>
+                <ul class="submenu">
+                    <li><a href="http://www.dogwatch.nz/dog-adoptions/adopt-a-dog/">Adopt a Dog</a></li>
+                    <li><a href="http://www.dogwatch.nz/dog-adoptions/the-adoption-process/">The Adoption Process</a></li>
+                    <li><a href="http://www.dogwatch.nz/dog-adoptions/dogs-homed/">Dogs Homed</a></li>
+                </ul>
+            </li>
+            <li class="header-nav-menu-item">
+                <a>How To Help Us</a>
+                <ul class="submenu">
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/dogwatch-variety-shop/">Dogwatch Variety Shop</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/donations/">Donations</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/sponsorship/">Sponsorship</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/volunteer/">Volunteer</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/merchandise/">Merchandise</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-to-help-us/spread-the-word/">Spread The Word</a></li>
+                </ul>
+            </li>
+            <li class="header-nav-menu-item">
+                <a>How We Can Help You</a>
+                <ul class="submenu">
+                    <li><a href="http://www.dogwatch.nz/how-we-can-help-you/rehoming-your-dog/">Rehoming Your Dog</a></li>
+                    <li><a href="http://www.dogwatch.nz/how-we-can-help-you/dog-owner-information/">Dog Owner Information</a></li>
+                </ul>
+            </li>
+            <li class="header-nav-menu-item">
+                <a>Events Diary</a>
+                <ul class="submenu">
+                    <li><a href="http://www.dogwatch.nz/events-diary/upcoming-events">Upcoming Events</a></li>
+                    <li><a href="http://www.dogwatch.nz/events-diary/recent-events">Recent Events</a></li>
+                </ul>
+            </li>
+            <li class="header-nav-menu-item">
+                <a href="http://www.dogwatch.nz/about-us/">About Us</a>
+            </li>
+        </ul>
+    </div>
+    <div id="mobile-nav-burger">
+        <p>Rescuing and Rehoming Abandoned Pound Dogs</p>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+            <img id="mobile-nav-burger-icon" src="/Content/Images/burger.png"/>
+        </a>
 
-    <ul id="navbar-menu">
-        <li>
-            <!-- TODO check typing for an empty a and relative routing-->
-            <a>Dog Adoptions</a>
-            <ul class="submenu">
-                <li><a href="http://www.dogwatch.nz/dog-adoptions/adopt-a-dog/">Adopt a Dog</a></li>
-                <li><a href="http://www.dogwatch.nz/dog-adoptions/the-adoption-process/">The Adoption Process</a></li>
-                <li><a href="http://www.dogwatch.nz/dog-adoptions/dogs-homed/">Dogs Homed</a></li>
-            </ul>
-        </li>
-        <li>
-            <a>How To Help Us</a>
-            <ul class="submenu">
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/dogwatch-variety-shop/">Dogwatch Variety Shop</a></li>
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/donations/">Donations</a></li>
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/sponsorship/">Sponsorship</a></li>
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/volunteer/">Volunteer</a></li>
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/merchandise/">Merchandise</a></li>
-                <li><a href="http://www.dogwatch.nz/how-to-help-us/spread-the-word/">Spread The Word</a></li>
-            </ul>
-        </li>
-        <li>
-            <a>How We Can Help You</a>
-            <ul class="submenu">
-                <li><a href="http://www.dogwatch.nz/how-we-can-help-you/rehoming-your-dog/">Rehoming Your Dog</a></li>
-                <li><a href="http://www.dogwatch.nz/how-we-can-help-you/dog-owner-information/">Dog Owner Information</a></li>
-            </ul>
-        </li>
-        <li>
-            <a>Events Diary</a>
-            <ul class="submenu">
-                <li><a href="http://www.dogwatch.nz/events-diary/upcoming-events">Upcoming Events</a></li>
-                <li><a href="http://www.dogwatch.nz/events-diary/recent-events">Recent Events</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="http://www.dogwatch.nz/contact-us/">Contact Us</a>
-        </li>
-    </ul>
-
-
+    </div>
+    <div id="mobile-menu-dropdown">
+        <ul id="navbar-menu-mob"> 
+            <li><a href="http://www.dogwatch.nz/dog-adoptions/adopt-a-dog/">Adopt a Dog</a></li>
+            <li><a href="http://www.dogwatch.nz/dog-adoptions/the-adoption-process/">The Adoption Process</a></li>
+            <li class="menu-last-of-type"><a href="http://www.dogwatch.nz/dog-adoptions/dogs-homed/">Dogs Homed</a></li>
+            <li><a href="http://www.dogwatch.nz/how-to-help-us/dogwatch-variety-shop/">Dogwatch Variety Shop</a></li>
+            <li><a href="http://www.dogwatch.nz/how-to-help-us/donations/">Donations</a></li>
+            <li><a href="http://www.dogwatch.nz/how-to-help-us/sponsorship/">Sponsorship</a></li>
+            <li><a href="http://www.dogwatch.nz/how-to-help-us/volunteer/">Volunteer</a></li>
+            <li><a href="http://www.dogwatch.nz/how-to-help-us/merchandise/">Merchandise</a></li>
+            <li class="menu-last-of-type"><a href="http://www.dogwatch.nz/how-to-help-us/spread-the-word/">Spread The Word</a></li>
+            <li><a href="http://www.dogwatch.nz/how-we-can-help-you/rehoming-your-dog/">Rehoming Your Dog</a></li>
+            <li class="menu-last-of-type"><a href="http://www.dogwatch.nz/how-we-can-help-you/dog-owner-information/">Dog Owner Information</a></li>
+            <li><a href="http://www.dogwatch.nz/events-diary/upcoming-events">Upcoming Events</a></li>
+            <li class="menu-last-of-type"><a href="http://www.dogwatch.nz/events-diary/recent-events">Recent Events</a></li>
+            <li class="menu-last-of-type"><a href="http://www.dogwatch.nz/about-us/">About Us</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            var x = document.getElementById("navbar-menu-mob");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </div>

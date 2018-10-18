@@ -1,9 +1,37 @@
-﻿body {
-    font-family: 'BahnSchrift'; /*until 'Happy Monkey' is working*/
-    padding-top: 150px;
-    border-top: 2px black;
+﻿* {
+    box-sizing: border-box;
 }
+
 
 a {
     cursor: pointer;
 }
+
+body {
+    font-family: 'BahnSchrift'; /*until 'Happy Monkey' is working*/
+    
+    border-top: 2px black;
+}
+#content-body {
+    padding-top: 4%;
+}
+
+
+
+
+@media screen and (min-width: 767px) /*Tablet*/ {
+    #content-body {
+        /*Matches height of header*/
+        padding-top: 6%;
+        top: 0;
+    }
+}
+
+@media screen and (min-width: 1025px) /*Desktop*/ {
+    #content-body {
+        /*Matches height of header*/
+        padding-top: 120px;
+        top: 0;
+    }
+}
+

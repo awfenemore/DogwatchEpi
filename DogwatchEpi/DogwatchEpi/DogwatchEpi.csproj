@@ -232,7 +232,9 @@
     <Folder Include="Models\Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\burger.png" />
     <Content Include="Content\Images\dogwatch-logo_434x115.png" />
+    <Content Include="Static\Footer.css" />
     <Content Include="Static\Globals.css" />
     <Content Include="Static\Header.css" />
     <Content Include="Views\Web.config" />

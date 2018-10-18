@@ -1,0 +1,92 @@
+﻿/* Overall footer settings */
+.footer {
+    height: 10%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    z-index: -5;
+}
+
+.footer ul { list-style-type: none; }
+
+#footer-navigation {
+    background-color: #385398;
+    border-top: 1px solid black;
+    font-size: 9px;
+    height: 50%;
+    margin: 0;
+    max-height: 50%;
+    position: relative;
+    top: 0;
+}
+
+#footer-navigation ul { padding-left: 0px; }
+
+#footer-navigation li {
+        
+    display: inline-block;
+    padding: 0 3px 0 3px;
+}
+
+#footer-navigation li a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer-navigation li a:hover {
+    color: lightgrey;
+    text-decoration: none;
+}
+
+#footer-info {
+    background-color: #1F3263;
+    bottom: 0;
+    font-size: 8px;
+    height: 50%;
+    margin: 0;
+    max-height: 50%;
+    position: relative;
+}
+
+#footer-info li {
+    display: block;
+    float: left;
+}
+
+#footer-info p {
+    background-color: #1F3263;
+    color: white;
+    margin: 0;
+    padding-top: 2%;
+}
+
+/*Screen size based settings*/
+
+@media screen and (min-width: 767px) /*Tablet*/ {
+    #footer-navigation li {
+        margin: 0 5px 0 5px;
+        padding: 0 5px 0 5px;
+    }
+
+    #footer-navigation { font-size: 16px; }
+
+    #footer-info { font-size: 16px; }
+
+    #footer-info p { padding-top: 1%; }
+}
+
+@media screen and (min-width: 1025px) /*Desktop*/ {
+    #footer-navigation li {
+        margin: 0 10px 0 10px;
+        padding: 0 10px 0 10px;
+    }
+
+    #footer-navigation {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    #footer-info { margin: 0; }
+}
