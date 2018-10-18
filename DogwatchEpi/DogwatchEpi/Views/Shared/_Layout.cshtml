@@ -8,19 +8,17 @@
 </head>
 <body>
 
-    <div>
-        <link rel="stylesheet" type="text/css" href="~/Static/Globals.css" />                 <!-- WORKING HERE -->
+<div>
+    <link rel="stylesheet" type="text/css" href="~/Static/Globals.css"/> <!-- WORKING HERE -->
 
-        @if (!Model.Layout.HideHeader)
-        {
-            Html.RenderPartial("Header", Model);
-        }
-        @RenderBody()
-        @if (!Model.Layout.HideFooter)
-        {
-            Html.RenderPartial("Footer", Model);
-        }
-    </div>
+
+    @{ Html.RenderPartial("Header", Model); }
+
+    @RenderBody()
+
+    @{ Html.RenderPartial("Footer", Model); }
+
+</div>
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 </body>
 </html>

@@ -13,6 +13,7 @@ namespace DogwatchEpi.Models.Pages
     //This is the base class for all others to inherit from. So anything common to all pages goes in here
     public class SitePageData : PageData
     {
+        //These are not currently being used
 
         [Display(
             GroupName = SystemTabNames.Settings,

@@ -1,10 +1,8 @@
 ﻿@using EPiServer.Core
 @using EPiServer.Web.Mvc.Html
-@model DogwatchEpi.Models.Pages.StandardPage
-
-@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@model DogwatchEpi.Models.ViewModels.IPageViewModel<DogwatchEpi.Models.Pages.SitePageData>
 
 <div id="content-body">
     <h1>test</h1>
-    @Html.PropertyFor(m => m.MainBody)
+ 
 </div>

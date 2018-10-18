@@ -1,9 +1,8 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using EPiServer.Core;
-using EPiServer.DataAbstraction;
+using EPiServer.Cms.Shell.UI.ObjectEditing.EditorDescriptors.SelectionFactories;
 using EPiServer.DataAnnotations;
-using EPiServer.SpecializedProperties;
+using EPiServer.Shell.ObjectEditing;
 using EPiServer.Web;
 
 namespace DogwatchEpi.Models.Pages
@@ -12,36 +11,59 @@ namespace DogwatchEpi.Models.Pages
     public class DogPage : SitePageData
     {
         [Display(
-            GroupName = Global.GroupNames.MetaData,
             Order = 300)]
         [CultureSpecific]
-        [UIHint(UIHint.Textarea)]
         public virtual string DogName { get; set; }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 200)]
+            Order = 305)]
+        [UIHint(Global.SiteUIHints.StringsCollection)]
         [CultureSpecific]
-        [BackingType(typeof(PropertyStringList))]
-        public virtual string[] PreviousDogNames { get; set; }
+        public virtual IList<string> PreviousDogNames { get; set; }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
+            Order = 310)]
+        [CultureSpecific]
+        public virtual string BreedDescription { get; set; }
+
+        [Display(
+            Order = 315)]
+        [CultureSpecific]
+        public virtual string AgeDescription { get; set; }
+
+
+        [Display(
+            Order = 325)]
+        [CultureSpecific]
+        [UIHint(UIHint.Textarea)]
+        public virtual string DogDescription { get; set; }
+
+        [Display(
             Order = 400)]
         [CultureSpecific]
         public virtual bool Desexed { get; set; }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
             Order = 400)]
         [CultureSpecific]
         public virtual bool Vaccinated { get; set; }
 
+
+
         [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 300)]
+            Order = 320)]
         [CultureSpecific]
-        [UIHint(UIHint.Textarea)]
-        public virtual string DogDescription { get; set; }
+        [SelectOne(SelectionFactoryType = typeof(LanguageSelectionFactory))]
+        public virtual string Gender { get; set; }
+    }
+
+
+    public class LanguageSelectionFactory : ISelectionFactory
+    {
+        public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
+        {
+            return new ISelectItem[] { new SelectItem() { Text = "Male", Value = "Male" }, new SelectItem() { Text = "Female", Value = "Female" }
+            };
+        }
     }
 }
