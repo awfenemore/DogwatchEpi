@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.UI.WebControls;
+using DogwatchEpi.Models.Media;
 using EPiServer.Cms.Shell.UI.ObjectEditing.EditorDescriptors.SelectionFactories;
+using EPiServer.Core;
+using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Web;
@@ -33,37 +37,55 @@ namespace DogwatchEpi.Models.Pages
 
 
         [Display(
+            Order = 320)]
+        [CultureSpecific]
+        [SelectOne(SelectionFactoryType = typeof(SelectionFactories.GenderSelectionFactory))]
+        public virtual string Gender { get; set; }
+
+        [Display(
             Order = 325)]
         [CultureSpecific]
         [UIHint(UIHint.Textarea)]
         public virtual string DogDescription { get; set; }
 
         [Display(
-            Order = 400)]
+            Order = 330)]
+        [CultureSpecific]
+        public virtual string ArrivalDescription { get; set; }
+
+        [Display(
+            Order = 405)]
         [CultureSpecific]
         public virtual bool Desexed { get; set; }
 
         [Display(
-            Order = 400)]
+            Order = 410)]
         [CultureSpecific]
         public virtual bool Vaccinated { get; set; }
 
-
+        [Display(
+            Order = 415)]
+        [CultureSpecific]
+        [SelectOne(SelectionFactoryType = typeof(SelectionFactories.ChildSelectionFactory))]
+        public virtual bool ChildSuitable { get; set; }
 
         [Display(
-            Order = 320)]
+            Order = 420)]
         [CultureSpecific]
-        [SelectOne(SelectionFactoryType = typeof(LanguageSelectionFactory))]
-        public virtual string Gender { get; set; }
-    }
+        [SelectOne(SelectionFactoryType = typeof(SelectionFactories.CatSelectionFactory))]
+        public virtual string CatSuitable { get; set; }
 
 
-    public class LanguageSelectionFactory : ISelectionFactory
-    {
-        public IEnumerable<ISelectItem> GetSelections(ExtendedMetadata metadata)
-        {
-            return new ISelectItem[] { new SelectItem() { Text = "Male", Value = "Male" }, new SelectItem() { Text = "Female", Value = "Female" }
-            };
-        }
-    }
+
+
+
+        [UIHint("MultipleImagesEditor")]
+        [BackingType(typeof(PropertyMultipleImages))]
+        [Display(GroupName = SystemTabNames.Content, Order = 10)]
+        public virtual MultipleImages DogImages { get; set; }
+
+
+
+}
+
 }

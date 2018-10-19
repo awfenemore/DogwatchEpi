@@ -85,16 +85,6 @@ namespace DogwatchEpi
         /// </summary>
         public const string StaticGraphicsFolderPath = "~/Static/gfx/";
 
-        /// <summary>
-        /// Enums to help with data types
-        /// </summary>
-        public static class SiteEnums
-        {
-            public enum DogGender
-            {
-                Male = 0,
-                Female = 1
-            };
-        }
+   
     }
 }

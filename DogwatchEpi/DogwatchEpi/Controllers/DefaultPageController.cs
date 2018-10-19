@@ -19,10 +19,12 @@ namespace DogwatchEpi.Controllers
     [TemplateDescriptor(Inherited = true)]
     public class DefaultPageController : PageControllerBase<SitePageData>
     {
+
         public ViewResult Index(SitePageData currentPage)
         {
             var model = CreateModel(currentPage);
             return View(string.Format("~/Views/{0}/Index.cshtml", currentPage.GetOriginalType().Name), model);
+
         }
 
         /// <summary>
