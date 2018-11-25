@@ -8,7 +8,7 @@ using EPiServer.SpecializedProperties;
 namespace DogwatchEpi.Models.Pages
 {
     [ContentType(DisplayName = "LandingPage", GUID = "8aaa6434-a5e0-4222-a037-02ac98e5c404", Description = "")]
-    public class LandingPage : PageData
+    public class LandingPage : SitePageData
     {
         
                 [CultureSpecific]

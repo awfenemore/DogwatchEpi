@@ -1,0 +1,47 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@model DogwatchEpi.Models.ViewModels.IPageViewModel<DogwatchEpi.Models.Pages.ContactUsPage>
+
+<div id="content-body">
+    <link rel="stylesheet" type="text/css" href="~/Static/Page Styles/ContactUsPage.css" />
+
+    <div id ="contact-form">
+        <h1>Contact Dogwatch</h1>
+        <form>
+            
+            <div id="name-container"><b>Name</b><input type="text" name="Name" id="name-input"><br /><br /></div>
+            <div id="email-container"><b>Email</b><input type="email" name="Email" id="email-input"/><br /><br /></div>    
+           
+            <b>Message</b><br/><br /> <textarea name="message" rows="10" cols="77"> </textarea><br/>
+            <button type="submit" id="submit-button">Send Now</button>
+        </form>
+    </div>
+    
+    <div id="contact-us-map">
+
+    </div>
+
+
+    <div id="contact-details-section">
+        <h1>Dogwatch Adoption Centre</h1>
+        <p><b>Email: </b><br/>@Model.CurrentPage.ContactEmail</p>
+        <p><b>Address: </b></p>@Html.PropertyFor(m => m.CurrentPage.Address)
+        <p><b>Phone: </b><br/>@Model.CurrentPage.ContactPhone</p>
+        <p><b>Opening Hours: </b></p>@Html.PropertyFor(m => m.CurrentPage.OpeningHours)
+
+
+    </div>
+</div>
+
+<!-- NOT CURRENTLY USED< NEED TO CHANGE    YOUR_KEY      TO A PAID API KEY MAKE IT WORK -->
+<script>
+    function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng("-43.52917790533265", "172.69198415600587"),
+            zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("contact-us-map"), mapProp);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>

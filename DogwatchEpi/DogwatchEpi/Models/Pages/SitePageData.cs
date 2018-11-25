@@ -14,6 +14,25 @@ namespace DogwatchEpi.Models.Pages
     public class SitePageData : PageData
     {
         //These are not currently being used
+        [Display(
+            GroupName = Global.GroupNames.MetaData,
+            Order = 100)]
+        [CultureSpecific]
+        public virtual string MetaTitle
+        {
+            get
+            {
+                var metaTitle = this.GetPropertyValue(p => p.MetaTitle);
+
+                // Use explicitly set meta title, otherwise fall back to page name
+                return !string.IsNullOrWhiteSpace(metaTitle)
+                    ? metaTitle
+                    : PageName;
+            }
+            set { this.SetPropertyValue(p => p.MetaTitle, value); }
+        }
+
+
 
         [Display(
             GroupName = SystemTabNames.Settings,

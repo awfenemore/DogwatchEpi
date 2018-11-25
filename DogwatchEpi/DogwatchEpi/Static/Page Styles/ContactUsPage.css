@@ -1,0 +1,31 @@
+﻿#contact-details-section {
+    flex: 0.25;
+    padding-right: 2%;
+    text-align: right;
+}
+
+#contact-form {
+    flex: 0.75;
+    padding-left: 2%;
+}
+
+
+
+
+
+#name-input {
+    margin-left: 10px;
+}
+
+#email-input {
+    margin-left: 10px;
+}
+
+#submit-button {
+    font-size: 20px;
+    font-family: 'BahnSchrift';
+    color: #fff;
+    position: relative;
+    background-color: rgb(35, 76, 150);
+    border: 2px solid rgb(35, 76, 150);
+}

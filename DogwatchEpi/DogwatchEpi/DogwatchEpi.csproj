@@ -226,6 +226,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Pages\ContactUsPage.cs" />
     <Compile Include="Models\Pages\DogPage.cs" />
     <Compile Include="Models\Pages\LandingPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
@@ -250,6 +251,7 @@
     <Content Include="Static\Footer.css" />
     <Content Include="Static\Globals.css" />
     <Content Include="Static\Header.css" />
+    <Content Include="Static\Page Styles\ContactUsPage.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -270,6 +272,7 @@
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\DogPage\Index.cshtml" />
+    <Content Include="Views\ContactUsPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
